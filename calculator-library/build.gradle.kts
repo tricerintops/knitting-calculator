@@ -10,7 +10,7 @@ version = "1.0.0"
 
 kotlin {
     jvm()
-    androidLibrary {
+    android {
         namespace = "com.thepassionatecoder.knittingcalculator"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -30,10 +30,6 @@ kotlin {
     linuxX64()
 
     sourceSets {
-        commonMain.dependencies {
-            //put your multiplatform dependencies here
-        }
-
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
