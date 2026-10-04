@@ -46,6 +46,18 @@ Use the Gradle wrapper to run the JVM version of the shared test suite:
 ./gradlew jvmTest
 ```
 
+Running the Android host tests locally requires an installed Android SDK and a machine-specific SDK path in `local.properties`:
+
+```properties
+sdk.dir=/absolute/path/to/Android/sdk
+```
+
+The `local.properties` file is ignored by Git because the SDK location differs between computers. Once it is configured, run:
+
+```shell
+./gradlew testAndroidHostTest
+```
+
 Tests for other targets can be run using their corresponding Gradle tasks on compatible hosts.
 
 ## Licence

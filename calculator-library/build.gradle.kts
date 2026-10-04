@@ -6,20 +6,20 @@ plugins {
 }
 
 group = "com.thepassionatecoder"
-version = "1.0.0"
+version = "0.1.0-SNAPSHOT"
 
 kotlin {
     jvm()
     android {
         namespace = "com.thepassionatecoder.knittingcalculator"
-        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        compileSdk {
+            version = release(libs.versions.android.compileSdk.get().toInt()) {
+                minorApiLevel = 0
+            }
+        }
         minSdk = libs.versions.android.minSdk.get().toInt()
 
-        withJava() // enable java compilation support
         withHostTestBuilder {}.configure {}
-        withDeviceTestBuilder {
-            sourceSetTreeName = "test"
-        }
 
         compilerOptions {
             jvmTarget = JvmTarget.JVM_11
