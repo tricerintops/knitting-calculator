@@ -12,6 +12,3 @@ fun generateFibi() = sequence {
         b = c
     }
 }
-
-expect val firstElement: Int
-expect val secondElement: Int
