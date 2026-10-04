@@ -1,13 +1,17 @@
+# IntelliJ IDEA
+.idea/
 *.iml
-.gradle
-.idea
+
+# Gradle and Kotlin build output
+.gradle/
+.kotlin/
+build/
+
+# macOS
 .DS_Store
-build
-captures
-.externalNativeBuild
-.cxx
+
+# Local Android SDK location
 local.properties
-xcuserdata
-.kotlin
-# So we don't accidentally commit our private keys
+
+# Publishing and signing keys
 *.gpg
