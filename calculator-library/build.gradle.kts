@@ -5,13 +5,13 @@ plugins {
     alias(libs.plugins.android.kotlin.multiplatform.library)
 }
 
-group = "io.github.kotlin"
+group = "com.thepassionatecoder"
 version = "1.0.0"
 
 kotlin {
     jvm()
     androidLibrary {
-        namespace = "org.jetbrains.kotlinx.multiplatform.library.template"
+        namespace = "com.thepassionatecoder.knittingcalculator"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
 

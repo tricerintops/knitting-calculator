@@ -1,11 +1,53 @@
-[![official project](http://jb.gg/badges/official.svg)](https://github.com/JetBrains#jetbrains-on-github)
+# Knitting Calculator
 
-# Multiplatform library template
+Knitting Calculator is an open-source Kotlin Multiplatform library for calculating how to distribute increases and decreases evenly across a row of knitting.
 
-## What is it?
+The calculation engine is deliberately independent of any user interface. The same tested code can eventually power mobile and web apps, a command-line tool, or a public API.
 
-This repository contains a simple library project, intended to demonstrate a [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) library.
+## Project status
 
-The library has only one function: generate the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) starting from platform-provided numbers.
+This project is in early development. It does not yet provide a stable API or a published package.
 
-Note that no other actions or tools usually required for the library development are set up, such as [tracking of backwards compatibility](https://kotlinlang.org/docs/jvm-api-guidelines-backward-compatibility.html#tools-designed-to-enforce-backward-compatibility), explicit API mode, licensing, contribution guideline, code of conduct and others. You can find a guide for best practices for designing Kotlin libraries [here](https://kotlinlang.org/docs/api-guidelines-introduction.html).
+The first planned calculations are:
+
+- Evenly spaced increases
+- Evenly spaced decreases
+
+## Platforms
+
+The project is currently configured to compile for:
+
+- JVM
+- Android
+- iOS devices using ARM64
+- iOS simulators using ARM64
+- Linux x64
+
+Web support is planned.
+
+## Project structure
+
+The `calculator-library` module contains the shared calculation code:
+
+```text
+calculator-library/
++-- src/
+    +-- commonMain/kotlin/    # Shared calculation code
+    +-- commonTest/kotlin/    # Shared tests
+```
+
+Platform-specific source sets will be added only when a platform genuinely requires different code.
+
+## Running the tests
+
+Use the Gradle wrapper to run the JVM version of the shared test suite:
+
+```shell
+./gradlew jvmTest
+```
+
+Tests for other targets can be run using their corresponding Gradle tasks on compatible hosts.
+
+## Licence
+
+Knitting Calculator is available under the [MIT License](LICENSE).

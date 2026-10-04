@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci
+package com.thepassionatecoder.knittingcalculator
 
 fun generateFibi() = sequence {
     var a = firstElement

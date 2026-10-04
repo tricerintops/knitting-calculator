@@ -1,4 +1,4 @@
-package io.github.kotlin.fibonacci
+package com.thepassionatecoder.knittingcalculator
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
