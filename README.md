@@ -60,6 +60,24 @@ The `local.properties` file is ignored by Git because the SDK location differs b
 
 Tests for other targets can be run using their corresponding Gradle tasks on compatible hosts.
 
+## Linting and formatting
+
+The project uses [ktlint](https://ktlint.github.io/ktlint/latest/) to check and format Kotlin source files and Gradle Kotlin scripts. The project's formatting rules are defined in `.editorconfig`.
+
+Check the project for formatting violations:
+
+```shell
+./gradlew ktlintCheck
+```
+
+Automatically fix violations that ktlint can correct:
+
+```shell
+./gradlew ktlintFormat
+```
+
+Some violations, such as incorrectly named files, cannot be fixed automatically. Review any changes made by `ktlintFormat`, then run `ktlintCheck` again before committing.
+
 ## Licence
 
 Knitting Calculator is available under the [MIT License](LICENSE).
