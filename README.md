@@ -78,6 +78,28 @@ Automatically fix violations that ktlint can correct:
 
 Some violations, such as incorrectly named files, cannot be fixed automatically. Review any changes made by `ktlintFormat`, then run `ktlintCheck` again before committing.
 
+### Linting GitHub Actions workflows
+
+GitHub Actions workflows are checked with [actionlint](https://github.com/rhysd/actionlint), which catches problems such as syntax errors, invalid expressions, and incorrect action inputs. CI runs actionlint automatically for every pull request targeting `main` and every push to `main`.
+
+If you change a file in `.github/workflows`, run actionlint locally before pushing your branch. This provides faster feedback and avoids waiting for CI to find errors that can be caught on your machine.
+
+On macOS, install actionlint with Homebrew:
+
+```shell
+brew install actionlint
+```
+
+Installation instructions for other platforms are available in the [actionlint documentation](https://github.com/rhysd/actionlint/blob/main/docs/install.md).
+
+Run actionlint from the project root:
+
+```shell
+actionlint
+```
+
+The project deliberately does not install a pre-commit hook. This keeps local development unobtrusive while still combining a documented local check with an automatic CI check. If the project later needs stronger local automation, a managed pre-commit hook can be added.
+
 ## Licence
 
 Knitting Calculator is available under the [MIT License](LICENSE).
